@@ -14,17 +14,17 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
  * |--------+------+------+------+------+-------------|           |------+------+------+------+------+------+--------|
  * | Tab    |   '  |   ,  |   .  |   P  |   Y  | Bkspc|           |Bkspc |   F  |   G  |   C  |   R  |   L  |   ]    |
  * |--------+------+------+------+------+------|      |           |      |------+------+------+------+------+--------|
- * | Esc    |   a  |   o  |   w  |   u  |   i  |------|           |------|   d  |   h  |   h  |   n  |s / L2|   L1   |
+ * | Esc    |   A  |   O  |   W  |   U  |   I  |------|           |------|   D  |   H  |   H  |   N  |S / L2| ~L1/L1 |
  * |--------+------+------+------+------+------|Return|           |Return|------+------+------+------+------+--------|
- * | LShift |   ;  |   q  |   j  |   k  |   x  |      |           |      |   b  |   m  |   w  |   v  |   z  | RShift |
+ * | LShift | Alt/;|   Q  |   J  |   K  |   X  |      |           |      |   B  |   M  |   W  |   V  | Ctl/Z| RShift |
  * `--------+------+------+------+------+-------------'           `-------------+------+------+------+------+--------'
- *   | Home | LGui | PgUp |   /  |   =  |                                       |   -  |   \  | PgDn | RGui | END  |
+ *   |Ctl/Home| Hyper| PgUp |   /  |   =  |                                       |   -  |   \  | PgDn | Meh  | END  |
  *   `----------------------------------'                                       `----------------------------------'
  *                                        ,-------------.       ,-------------.
  *                                        | LCTRL| LALT |       | RAlt | RCtrl| 
  *                                 ,------|------|------|       |------+------+------.
  *                                 |      |      | RIGHT|       |  UP  |      |      |
- *                                 | Space| HYPER|------|       |------| MEH  |Space |
+ *                                 | Space| LGUI |------|       |------| RGUI |Space |
  *                                 |      |      | LEFT |       | DOWN |      |      |
  *                                 `--------------------'       `--------------------'
  */
@@ -35,20 +35,20 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         KC_GRV,         KC_1,           KC_2,    KC_3,   KC_4,   KC_5,   KC_DELT,
         KC_TAB,         KC_QUOT,        KC_COMM, KC_DOT, KC_P,   KC_Y,   KC_BSPC,
         KC_ESC,         KC_A,           KC_O,    KC_E,   KC_U,   KC_I,
-        KC_LSFT,        KC_SCLN,         KC_Q,   KC_J,   KC_K,   KC_X,   KC_ENT,
-        KC_HOME,        KC_LGUI,        KC_PGUP, KC_SLSH,KC_EQL,
-                                                            KC_LCTL,  KC_LALT,
-                                                                      KC_RGHT,
-                                               KC_SPC,   ALL_T(KC_NO),KC_LEFT,
+        KC_LSFT,        ALT_T(KC_SCLN), KC_Q,    KC_J,   KC_K,   KC_X,   KC_ENT,
+        CTL_T(KC_HOME), ALL_T(KC_NO),   KC_PGUP, KC_BSLS,KC_MINS,
+                                                                KC_LCTL, KC_LALT,
+                                                                         KC_RGHT,
+                                                        KC_SPC, KC_LGUI, KC_LEFT,
         // right hand
              KC_DELT,     KC_6,   KC_7,   KC_8,   KC_9,   KC_0,             KC_LBRC,
-             KC_BSPC,     KC_F,   KC_G,   KC_C,   KC_R,   KC_L,             KC_RBRC,
-                          KC_D,   KC_H,   KC_T,   KC_N,   LT(MDIA, KC_S),   TG(1),
-             MEH_T(KC_NO),KC_B,   KC_M,   KC_W,   KC_V,   CTL_T(KC_Z),      KC_RSFT,
-                                  KC_MINS,KC_BSLS,KC_PGDN,KC_RGUI,          KC_END,
-             KC_RALT,KC_RCTL,
-             KC_UP,
-             KC_DOWN,MEH_T(KC_NO), KC_SPC
+             KC_BSPC,     KC_F,   KC_G,   KC_C,   KC_R,   KC_L,             LT(SYMB, KC_RBRC),
+                          KC_D,   KC_H,   KC_T,   KC_N,   LT(MDIA, KC_S),   TG(SYMB),
+             KC_ENT,      KC_B,   KC_M,   KC_W,   KC_V,   KC_Z,             KC_RSFT,
+                                  KC_SLSH,KC_EQL, KC_PGDN,MEH_T(KC_NO),     CTL_T(KC_END),
+             RALT(KC_NO), KC_RCTL,
+             KC_UP,   
+             KC_DOWN, KC_RGUI, KC_SPC
     ),
 /* Keymap 1: Symbol Layer
  *
